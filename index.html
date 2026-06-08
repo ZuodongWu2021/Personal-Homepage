@@ -479,7 +479,161 @@ body {
 
 
 
+/* ===== Strong Mobile Fix ===== */
+@media screen and (max-width: 760px) {
 
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  #container {
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 8px auto !important;
+    padding: 0 8px !important;
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: auto !important;
+    max-width: 100% !important;
+    padding: 16px 14px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box;
+  }
+
+  /* 修复旧 table 头像布局 */
+  table.imgtable,
+  table.imgtable tbody,
+  table.imgtable tr,
+  table.imgtable td {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box;
+  }
+
+  table.imgtable img {
+    width: 155px !important;
+    height: auto !important;
+    margin: 0 auto 14px auto !important;
+    display: block !important;
+  }
+
+  table.imgtable p {
+    text-align: center !important;
+    line-height: 1.65 !important;
+    margin: 0 !important;
+  }
+
+  /* 修复新 profile-card 布局 */
+  .profile-card {
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 18px 14px !important;
+    text-align: center !important;
+  }
+
+  .profile-photo {
+    flex: none !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .profile-photo img {
+    width: 150px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .profile-info {
+    width: 100% !important;
+    padding-left: 0 !important;
+  }
+
+  .profile-info p {
+    text-align: center !important;
+    line-height: 1.65 !important;
+  }
+
+  .profile-name {
+    font-size: 22px !important;
+  }
+
+  /* 导航栏自动换行 */
+  .staffshortcut {
+    display: block !important;
+    line-height: 1.8 !important;
+  }
+
+  .staffshortcut a {
+    display: inline-block !important;
+    margin: 2px 4px !important;
+    font-size: 13px !important;
+  }
+
+  /* 正文 */
+  p {
+    text-align: left !important;
+    line-height: 1.7 !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+    margin-top: 24px !important;
+  }
+
+  /* 教育经历 */
+  .education-time {
+    display: block !important;
+    width: auto !important;
+    margin-bottom: 2px !important;
+  }
+
+  .education-detail {
+    margin-left: 0 !important;
+  }
+
+  .education-item {
+    margin-bottom: 16px !important;
+  }
+
+  /* 论文列表 */
+  .pub-list {
+    padding-left: 0 !important;
+  }
+
+  .pub-list li {
+    padding-left: 2rem !important;
+    line-height: 1.55 !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  /* 图片 */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .center-image img {
+    max-width: 88% !important;
+  }
+
+  /* 访问地区标签 */
+  #visitor-location {
+    max-width: 90% !important;
+    white-space: normal !important;
+    line-height: 1.5 !important;
+  }
+}
 
 
 

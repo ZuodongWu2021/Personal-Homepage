@@ -1,0 +1,612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="./Files/jemdoc.css" type="text/css" />
+
+<title>Zuodong Wu</title>
+
+<style>
+/* ===== Academic Homepage Style ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", "Microsoft YaHei", serif;
+  background: linear-gradient(135deg, #edf3f8 0%, #f7f9fc 45%, #eaf1f7 100%);
+  color: #222;
+}
+
+#container {
+  max-width: 980px;
+  margin: 30px auto;
+  padding: 0 18px;
+}
+
+.container {
+  background: #ffffff;
+  padding: 30px 38px;
+  border-radius: 10px;
+  border: 1px solid #d9e4ef;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Profile Header ===== */
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: #f8fbff;
+  border: 1px solid #d8e6f2;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info p {
+  margin: 0;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.profile-name {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1f4e79;
+  font-family: "Microsoft YaHei", "Times New Roman", serif;
+}
+
+.profile-photo {
+  flex: 0 0 190px;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 180px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+  background: #ffffff;
+}
+
+/* ===== Headings ===== */
+
+h2 {
+  color: #1f4e79;
+  font-size: 20px;
+  border-bottom: 2px solid #d6e4f0;
+  padding-bottom: 6px;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+/* ===== Links ===== */
+
+a {
+  color: #1f5f99;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0b3d66;
+  text-decoration: underline;
+}
+
+/* ===== Text ===== */
+
+p {
+  line-height: 1.75;
+  text-align: justify;
+}
+
+ul, ol {
+  line-height: 1.65;
+}
+
+/* ===== Navigation ===== */
+
+.staffshortcut a,
+a[href^="#"] {
+  font-size: 14px;
+  color: #244f73;
+}
+
+/* ===== Education ===== */
+
+.education-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.education-item {
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+.education-time {
+  display: inline-block;
+  width: 135px;
+  font-weight: bold;
+}
+
+.education-degree {
+  font-weight: bold;
+}
+
+.education-detail {
+  margin-left: 135px;
+}
+
+/* ===== Publications ===== */
+
+.pub-list {
+  counter-reset: pub;
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.pub-list li {
+  counter-increment: pub;
+  margin-bottom: 10px;
+  line-height: 1.55;
+  padding-left: 2.2rem;
+  position: relative;
+}
+
+.pub-list li::before {
+  content: "[" counter(pub) "] ";
+  position: absolute;
+  left: 0;
+}
+
+/* ===== Meme Images ===== */
+
+.center-image {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.center-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.center-image-caption {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* ===== Mobile Layout ===== */
+
+@media screen and (max-width: 760px) {
+  #container {
+    margin: 15px auto;
+    padding: 0 10px;
+  }
+
+  .container {
+    padding: 22px 20px;
+  }
+
+  .profile-card {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .profile-info p {
+    text-align: center;
+  }
+
+  .profile-photo {
+    flex: none;
+  }
+
+  .profile-photo img {
+    width: 165px;
+    height: 205px;
+  }
+
+  .education-time {
+    display: block;
+    width: auto;
+    margin-bottom: 2px;
+  }
+
+  .education-detail {
+    margin-left: 0;
+  }
+}
+
+
+
+/* ===== Dynamic Effects ===== */
+
+/* 访问地点小标签 */
+#visitor-location {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 8px;
+  font-size: 13px;
+  color: #365f7d;
+  background: #eef6ff;
+  border: 1px solid #d4e6f7;
+  border-radius: 12px;
+}
+
+/* 页面淡入 */
+.container {
+  animation: fadeInPage 0.8s ease-in-out;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 标题悬停动态 */
+h2 {
+  transition: all 0.25s ease;
+}
+
+h2:hover {
+  color: #0b3d66;
+  padding-left: 6px;
+}
+
+/* 链接悬停微动 */
+a {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  transform: translateY(-1px);
+}
+
+/* 头像悬停效果 */
+.profile-photo img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* 点击特效 */
+.click-effect {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 15px;
+  font-weight: bold;
+  color: #1f5f99;
+  animation: clickFloat 0.8s ease-out forwards;
+}
+
+@keyframes clickFloat {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -120%) scale(1.4);
+  }
+}
+
+/* 小圆点点击波纹 */
+.click-dot {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(31, 95, 153, 0.35);
+  pointer-events: none;
+  z-index: 9998;
+  animation: dotExpand 0.65s ease-out forwards;
+}
+
+@keyframes dotExpand {
+  from {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(4);
+  }
+}
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", "Microsoft YaHei", serif;
+  background:
+    linear-gradient(rgba(31, 78, 121, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 78, 121, 0.045) 1px, transparent 1px),
+    linear-gradient(135deg, #f5f8fc 0%, #eef4fa 100%);
+  background-size: 28px 28px, 28px 28px, 100% 100%;
+  color: #222;
+}
+
+
+
+
+
+</style>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+<a id="home" class="anchor"></a>
+
+<div id="container">
+<div class="container">
+<a href="./"><img src="../Files/favicon.ico" alt="" height="215px" /></a>&nbsp;</td>
+<div class="profile-card">
+
+  <div class="profile-info">
+    <p>
+      <a href="./"><span class="profile-name">Zuodong Wu</span></a><br />
+      <a href="https://bmxy.bjtu.edu.cn/cms/item/188.html">Beijing Key Laboratory of Security and Privacy in Intelligent Transportation</a><br />
+      <a href="https://www.bjtu.edu.cn/">Beijing Jiaotong University</a><br />
+      <br />
+
+      Address: School of Cyberspace Security, Beijing Jiaotong University, No. 3 Shangyuancun, Xizhimenwai, Haidian District, Beijing, China<br />
+
+      <span class="staffshortcut">
+        <a href="#Biography">Biography</a> |
+        <a href="#News">News</a> |
+        <a href="#Interest">Research Interests</a> |
+        <a href="#Education">Education</a> |
+        <a href="#Publications">Journal Papers</a> |
+        <a href="#Conferences">Conference Papers</a> |
+        <a href="#Services">Academic Services</a> |
+        <a href="#Awards">Honors and Awards</a>
+      </span>
+      <br />
+      <br />
+
+      Email: 21112056@bjtu.edu.cn (preferred); &nbsp;&nbsp; wuzuodong2024@gmail.com <br />
+      [<a href="https://scholar.google.com.hk/citations?user=xHiaINwAAAAJ&amp;hl=zh-CN" target="_blank">Google Scholar</a>]
+      [<a href="https://github.com/ZuodongWu2021" target="_blank">GitHub</a>]
+      [<a href="./index.html" target="_blank">Chinese Homepage</a>]
+    </p>
+  </div>
+
+  <div class="profile-photo">
+    <a href="./">
+      <img src="./Files/Wuzuodong.jpg" alt="Zuodong Wu" />
+    </a>
+  </div>
+
+</div>
+
+
+<a name="Biography"><h2>Biography</h2></a>
+
+<p>
+Zuodong Wu was born in Zhumadian, Henan Province, China. He is a Ph.D. student in Cyberspace Security at the School of Cyberspace Security, Beijing Jiaotong University. His research interests include privacy computing and applied cryptography. In 2024, he joined Muroran Institute of Technology, Hokkaido, Japan, as a CSC-sponsored visiting Ph.D. student, under the supervision of Prof. Mianxiong Dong and Prof. Kaoru Ota.
+</p>
+
+<p>
+During his Ph.D. study, he has been conducting research on cyberspace security, privacy protection, authorized privacy-preserving data retrieval, decentralized identity, and applied cryptographic protocols. He has published four first-author papers in leading international journals, including <i>IEEE Transactions on Dependable and Secure Computing</i>, <i>IEEE Transactions on Network and Service Management</i>, <i>Computer Networks</i>, and <i>Computer Standards &amp; Interfaces</i>.
+</p>
+
+<p>
+His research focuses on decentralized identity framework design, privacy-preserving authorized sharing of personal data, anonymous authorization mechanisms, and cryptographic privacy-preserving protocol design. He has also developed several prototype systems. He has participated in multiple research projects, including the National Key R&amp;D Program of China on blockchain-based Web 3.0 frontier technologies, the National Natural Science Foundation of China project on secure and controllable theories and methods for blockchain, and the Henan Provincial Science and Technology Innovation Talent Program on privacy protection methods for content-centric networking.
+</p>
+
+
+<a name="News"><h2>News</h2></a>
+<ul>
+</ul>
+
+
+<a name="Interest"><h2>Research Interests</h2></a>
+
+<p>
+My research interests include privacy computing, secure multi-party computation, and applied cryptography. Currently, I mainly focus on the following topics:
+</p>
+
+<ul>
+  <li>Authorized privacy-preserving data retrieval</li>
+  <li>Decentralized identity</li>
+  <li>Verifiable credentials</li>
+  <li>Private set intersection</li>
+</ul>
+
+
+<a name="Education"><h2>Education</h2></a>
+
+<ul class="education-list">
+
+  <li class="education-item">
+    <span class="education-time">2014.9-2018.6</span>
+    <span class="education-degree">B.Eng.</span>,
+    <a href="https://cst.hpu.edu.cn/">School of Computer Science and Technology</a>,
+    <a href="https://www.hpu.edu.cn/">Henan Polytechnic University</a>
+    <div class="education-detail">
+      Major: Computer Science and Technology
+    </div>
+  </li>
+
+  <li class="education-item">
+    <span class="education-time">2018.9-2021.6</span>
+    <span class="education-degree">M.Eng.</span>,
+    <a href="https://soft.zzuli.edu.cn/">School of Software</a>,
+    <a href="https://www.zzuli.edu.cn/">Zhengzhou University of Light Industry</a>
+    <div class="education-detail">
+      <a href="https://dataology.zzuli.edu.cn/">Henan Key Laboratory of Food Safety Data Intelligence</a>, Research Area: Applied Cryptography<br />
+      Advisor: Prof. Jianwei Zhang
+    </div>
+  </li>
+
+  <li class="education-item">
+    <span class="education-time">2021.9-Present</span>
+    <span class="education-degree">Ph.D. Student</span>,
+    <a href="https://bmxy.bjtu.edu.cn/cms/item/188.html">Beijing Key Laboratory of Security and Privacy in Intelligent Transportation</a>,
+    <a href="https://www.bjtu.edu.cn/">Beijing Jiaotong University</a>
+    <div class="education-detail">
+      Research Area: Privacy Computing and Applied Cryptography<br />
+      Advisor: <a href="导师的个人主页.site">Assoc. Prof. Dawei Zhang</a>
+    </div>
+  </li>
+
+  <li class="education-item">
+    <span class="education-time">2024.10-2025.10</span>
+    <span class="education-degree">CSC Visiting Ph.D. Student</span>,
+    <a href="https://u.muroran-it.ac.jp/enes.html">Emerging Networks and Systems Laboratory</a>,
+    <a href="https://muroran-it.ac.jp/">Muroran Institute of Technology</a>
+    <div class="education-detail">
+      Research Area: IoT Privacy Protection<br />
+      Advisors:
+      <a href="https://u.muroran-it.ac.jp/enes/~mxdong/">Prof. Mianxiong Dong</a>
+      and
+      <a href="https://u.muroran-it.ac.jp/enes/~ota/">Prof. Kaoru Ota</a>
+    </div>
+  </li>
+
+</ul>
+
+
+<a name="Publications"><h2>Selected Publications</h2></a>
+
+<ol class="pub-list">
+
+  <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “VOLE-PDRAA: An Efficient Privacy-Preserving Data Retrieval Protocol with Anonymous Authorization Based on Vector-OLE,”
+    <b><i>IEEE Transactions on Dependable and Secure Computing</i></b>,
+    2026.
+    (<b>CCF-A, Q1</b>)
+  </li>
+
+  <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “PDRAA: A Privacy Data Retrieval Protocol with Anonymous Authorization Based on Verifiable Credential,”
+    <b><i>IEEE Transactions on Network and Service Management</i></b>,
+    2026.
+    (<b>CCF-C, Q1</b>)
+  </li>
+
+  <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “PRSD: Efficient Protocol for Privacy-Preserving Retrieval of Sensitive Data Based on Labeled PSI,”
+    <b><i>Computer Networks</i></b>,
+    2024.
+    (<b>CCF-B, Q1</b>)
+  </li>
+
+  <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “HealthDID: An Efficient and Authorizable Multi-Party Privacy-Preserving EMR Sharing System Based on DID,”
+    <b><i>Computer Standards &amp; Interfaces</i></b>,
+    2024.
+    (<b>Q1</b>)
+  </li>
+
+  <li>
+    X. Han, <b>Z. Wu</b>, et al.,
+    “CPPA-RORS: A Privacy-Preserving Authentication Scheme Based on Revocable Ring Signature for VANETs,”
+    <b><i>Internet of Things</i></b>,
+    2024.
+    (<b>Q1</b>)
+  </li>
+
+  <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “Respect Your Privacy: An Identifiable and Authorized Privacy Data Retrieval Protocol Through DID,”
+    <b><i>Information Processing &amp; Management</i></b>,
+    under review.
+    (<b>Third-round review, CCF-B, Q1 </b>)
+  </li>
+
+</ol>
+
+
+<a name="Conferences"><h2>Conference Papers</h2></a>
+
+<div class="center-image">
+  <img src="./Files/aigei_com.gif"
+       alt="Too hard to publish"
+       style="width: 180px;" />
+  <div class="center-image-caption">
+    Too hard to publish...
+  </div>
+</div>
+
+
+<a name="Services"><h2>Academic Services</h2></a>
+
+<ul>
+  <li><b>IEEE Transactions on Information Forensics and Security (TIFS)</b>, CCF-A, Reviewer in Cryptography</li>
+  <li><b>IEEE Transactions on Dependable and Secure Computing (TDSC)</b>, CCF-A, Reviewer in Privacy Computing</li>
+  <li><b>Information Processing &amp; Management (IPM)</b>, CCF-B, Reviewer in Blockchain Security</li>
+  <li><b>Journal of Systems Architecture (JSA)</b>, CCF-B, Reviewer in Applied Cryptography</li>
+  <li><b>IEEE Transactions on Network and Service Management (TNSM)</b>, CCF-C, Reviewer in Cryptography</li>
+  <li><b>The 11th International Conference on Big Data Computing and Communications (BigCom 2025)</b>, Chair of the Security and Privacy for Big Data Track</li>
+</ul>
+
+
+<a name="Awards"><h2>Honors and Awards</h2></a>
+
+<ul>
+</ul>
+
+<div class="center-image">
+  <img src="./Files/浮云.jpg"
+       alt="Honors are only floating clouds"
+       style="width: 420px;" />
+  <div class="center-image-caption">
+    Honors are only floating clouds...
+  </div>
+</div>
+
+<br />
+<br />
+
+</div>
+</div>
+</body>
+</html>

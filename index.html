@@ -1,0 +1,812 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+
+
+<style>
+/* ===== Academic Homepage Style ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", "Microsoft YaHei", serif;
+  background: linear-gradient(135deg, #edf3f8 0%, #f7f9fc 45%, #eaf1f7 100%);
+  color: #222;
+}
+
+#container {
+  max-width: 980px;
+  margin: 30px auto;
+  padding: 0 18px;
+}
+
+.container {
+  background: #ffffff;
+  padding: 30px 38px;
+  border-radius: 10px;
+  border: 1px solid #d9e4ef;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Profile Header ===== */
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+  background: #f8fbff;
+  border: 1px solid #d8e6f2;
+  border-radius: 12px;
+  padding: 26px 34px;
+  margin-bottom: 24px;
+}
+
+.profile-photo {
+  flex: 0 0 190px;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 180px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+  background: #ffffff;
+}
+
+.profile-info {
+  flex: 1;
+  padding-left: 8px;
+}
+
+.profile-info p {
+  margin: 0;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.profile-name {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1f4e79;
+  font-family: "Microsoft YaHei", "Times New Roman", serif;
+}
+
+.profile-photo {
+  flex: 0 0 190px;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 180px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+  background: #ffffff;
+}
+
+/* ===== Headings ===== */
+
+h2 {
+  color: #1f4e79;
+  font-size: 20px;
+  border-bottom: 2px solid #d6e4f0;
+  padding-bottom: 6px;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+/* ===== Links ===== */
+
+a {
+  color: #1f5f99;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0b3d66;
+  text-decoration: underline;
+}
+
+/* ===== Text ===== */
+
+p {
+  line-height: 1.75;
+  text-align: justify;
+}
+
+ul, ol {
+  line-height: 1.65;
+}
+
+/* ===== Navigation ===== */
+
+.staffshortcut a,
+a[href^="#"] {
+  font-size: 14px;
+  color: #244f73;
+}
+
+/* ===== Education ===== */
+
+.education-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.education-item {
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+.education-time {
+  display: inline-block;
+  width: 135px;
+  font-weight: bold;
+}
+
+.education-degree {
+  font-weight: bold;
+}
+
+.education-detail {
+  margin-left: 135px;
+}
+
+/* ===== Publications ===== */
+
+.pub-list {
+  counter-reset: pub;
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.pub-list li {
+  counter-increment: pub;
+  margin-bottom: 10px;
+  line-height: 1.55;
+  padding-left: 2.2rem;
+  position: relative;
+}
+
+.pub-list li::before {
+  content: "[" counter(pub) "] ";
+  position: absolute;
+  left: 0;
+}
+
+/* ===== Meme Images ===== */
+
+.center-image {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.center-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.center-image-caption {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* ===== Mobile Layout ===== */
+
+@media screen and (max-width: 760px) {
+  #container {
+    margin: 15px auto;
+    padding: 0 10px;
+  }
+
+  .container {
+    padding: 22px 20px;
+  }
+
+  .profile-card {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .profile-info p {
+    text-align: center;
+  }
+
+  .profile-photo {
+    flex: none;
+  }
+
+  .profile-photo img {
+    width: 165px;
+    height: 205px;
+  }
+
+  .education-time {
+    display: block;
+    width: auto;
+    margin-bottom: 2px;
+  }
+
+  .education-detail {
+    margin-left: 0;
+  }
+}
+
+
+
+/* ===== Dynamic Effects ===== */
+
+/* 访问地点小标签 */
+#visitor-location {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 8px;
+  font-size: 13px;
+  color: #365f7d;
+  background: #eef6ff;
+  border: 1px solid #d4e6f7;
+  border-radius: 12px;
+}
+
+/* 页面淡入 */
+.container {
+  animation: fadeInPage 0.8s ease-in-out;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 标题悬停动态 */
+h2 {
+  transition: all 0.25s ease;
+}
+
+h2:hover {
+  color: #0b3d66;
+  padding-left: 6px;
+}
+
+/* 链接悬停微动 */
+a {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  transform: translateY(-1px);
+}
+
+/* 头像悬停效果 */
+.profile-photo img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* 点击特效 */
+.click-effect {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 15px;
+  font-weight: bold;
+  color: #1f5f99;
+  animation: clickFloat 0.8s ease-out forwards;
+}
+
+@keyframes clickFloat {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -120%) scale(1.4);
+  }
+}
+
+/* 小圆点点击波纹 */
+.click-dot {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(31, 95, 153, 0.35);
+  pointer-events: none;
+  z-index: 9998;
+  animation: dotExpand 0.65s ease-out forwards;
+}
+
+@keyframes dotExpand {
+  from {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(4);
+  }
+}
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", "Microsoft YaHei", serif;
+  background:
+    linear-gradient(rgba(31, 78, 121, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 78, 121, 0.045) 1px, transparent 1px),
+    linear-gradient(135deg, #f5f8fc 0%, #eef4fa 100%);
+  background-size: 28px 28px, 28px 28px, 100% 100%;
+  color: #222;
+}
+
+
+
+
+/* ===== Mobile Responsive Layout ===== */
+
+@media screen and (max-width: 760px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  #container {
+    width: auto;
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 0 8px;
+  }
+
+  .container {
+    padding: 18px 16px;
+    border-radius: 8px;
+  }
+
+  /* 顶部个人信息：手机端上下排列 */
+  .profile-card {
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .profile-photo {
+    flex: none;
+    text-align: center;
+  }
+
+  .profile-photo img {
+    width: 155px;
+    height: 195px;
+  }
+
+  .profile-info {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .profile-info p {
+    text-align: center;
+    line-height: 1.65;
+  }
+
+  .profile-name {
+    font-size: 23px;
+  }
+
+  /* 顶部导航自动换行 */
+  .staffshortcut {
+    display: block;
+    line-height: 1.8;
+  }
+
+  .staffshortcut a {
+    display: inline-block;
+    margin: 2px 4px;
+  }
+
+  /* 正文避免撑出屏幕 */
+  p {
+    text-align: left;
+    line-height: 1.7;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* 教育经历手机端：时间单独一行 */
+  .education-time {
+    display: block;
+    width: auto;
+    margin-bottom: 2px;
+  }
+
+  .education-detail {
+    margin-left: 0;
+  }
+
+  .education-item {
+    margin-bottom: 16px;
+  }
+
+  /* 论文列表手机端 */
+  .pub-list li {
+    padding-left: 2rem;
+    line-height: 1.55;
+    overflow-wrap: break-word;
+  }
+
+  /* 图片自适应 */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .center-image img {
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../Files/jemdoc.css" type="text/css" />
+
+<title>吴作栋</title>
+
+</head>
+<body>
+
+<!-- Project
+<div class="menu"> <a href="#home">Home</a> 
+<a href="#publications">Publications</a> 
+<a href="#services">Services</a> 
+<a href="#awards">Awards</a>  
+</div>
+ -->
+ 
+<a id="home" class="anchor"></a>
+<div id="container"> 
+<div class="container"> 
+
+<a href="./"><img src="./Files/favicon.ico" alt="" height="215px" /></a>&nbsp;</td>
+
+<div class="profile-card">
+
+  <div class="profile-photo">
+    <a href="./">
+      <img src="./Files/Wuzuodong.jpg" alt="吴作栋" />
+    </a>
+  </div>
+
+  <div class="profile-info">
+    <p>
+      <a href="./"><span class="profile-name">吴作栋</span></a><br />
+      <a href="https://bmxy.bjtu.edu.cn/cms/item/188.html">北京市智能交通安全与隐私重点实验室</a><br />
+      <a href="https://www.bjtu.edu.cn/">北京交通大学</a><br />
+      <br />
+
+      地址：北京市海淀区西直门外上园村3号北京交通大学网络空间安全学院<br />
+
+      <span class="staffshortcut">
+        <a href="#News">最新消息</a> |
+        <a href="#Interest">研究兴趣</a> |
+        <a href="#Education">教育经历</a> |
+        <a href="#Publications">期刊论文</a> |
+        <a href="#Conferences">会议论文</a> |
+        <a href="#Services">学术服务</a> |
+        <a href="#Awards">荣誉奖励</a>
+      </span>
+      <br />
+      <br />
+
+      邮箱：21112056@bjtu.edu.cn（优先）；&nbsp;&nbsp; wuzuodong2024@gmail.com <br />
+      [<a href="https://scholar.google.com.hk/citations?user=xHiaINwAAAAJ&amp;hl=zh-CN" target="_blank">Google Scholar</a>]
+      [<a href="https://github.com/ZuodongWu2021" target="_blank">GitHub</a>]
+      [<a href="./index1.html" target="_blank">English Homepage</a>]
+    </p>
+  </div>
+
+</div>
+
+
+<A NAME="Biography"><h2>个人简介</h2></A>
+<p>
+吴作栋，河南驻马店人，北京交通大学网络空间安全学院（国家保密学院）网络空间安全专业博士，主要研究方向为隐私计算与密码学应用。2024年于日本北海道室兰工业大学开展 CSC 国家公派联合培养博士研究生访学研究，合作导师为董冕雄教授和 Kaoru Ota 教授。博士阶段主要围绕网络空间安全、隐私保护、可授权隐私数据检索、分布式数字身份以及密码学应用等方向开展研究。
+科研方面，本人以第一作者在国内外重要学术期刊发表论文 4 篇，相关成果发表于 <i>IEEE Transactions on Dependable and Secure Computing</i>、<i>IEEE Transactions on Network and Service Management</i>、<i>Computer Networks</i>、<i>Computer Standards &amp; Interfaces</i> 等期刊。研究内容主要聚焦于分布式数字身份框架设计、个人数据密态授权共享、匿名授权机制以及密码学隐私保护协议设计，并开发了相关原型系统。
+本人先后参与国家重点研发计划“基于区块链的 Web 3.0 前沿技术”、国家自然科学基金“区块链的安全可控理论与方法研究”以及河南省科技创新人才计划“内容中心网络隐私保护方法研究”等科研项目，积累了较为系统的密码协议设计、隐私计算和区块链安全研究经验。
+</p>
+
+
+<A NAME="News"><h2>最新消息</h2></A>
+<ul>
+
+</ul>
+
+
+
+<A NAME="Interest"><h2>研究兴趣</h2></A>
+个人研究领域包括：隐私计算，安全多方计算，密码学应用。目前，本人主要致力于以下的研究方向：
+<ul>
+<li>可授权隐私数据检索</li>
+<Li>分布式数字身份</Li>
+<li>可验证凭证研究</li>
+<li>隐私集合求交</li>
+</ul>
+
+
+
+<A NAME="Education"><h2>教育经历</h2></A>
+
+<style>
+.education-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.education-item {
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.education-time {
+  display: inline-block;
+  width: 130px;
+  font-weight: bold;
+}
+
+.education-degree {
+  font-weight: bold;
+}
+
+.education-detail {
+  margin-left: 130px;
+}
+</style>
+
+<ul class="education-list">
+
+  <li class="education-item">
+    <span class="education-time">2014.9-2018.6</span>
+    <span class="education-degree">本科</span>，
+    <a href="https://cst.hpu.edu.cn/">计算机科学与技术学院</a>，
+    <a href="https://www.hpu.edu.cn/">河南理工大学</a>
+    <div class="education-detail">
+      专业：计算机科学与技术
+    </div>
+  </li>
+  <li class="education-item">
+    <span class="education-time">2018.9-2021.6</span>
+    <span class="education-degree">硕士</span>，
+    <a href="https://soft.zzuli.edu.cn/">软件学院</a>，
+    <a href="https://www.zzuli.edu.cn/">郑州轻工业大学</a>
+    <div class="education-detail">
+      <a href="https://dataology.zzuli.edu.cn/">河南省食品安全数据智能重点实验室</a>，方向：密码学应用<br>
+      导师：张建伟教授（中原科技创新领军人才）
+    </div>
+  </li>
+  <li class="education-item">
+    <span class="education-time">2021.9-至今</span>
+    <span class="education-degree">博士研究生</span>，
+    <a href="https://bmxy.bjtu.edu.cn/cms/item/188.html">北京市智能交通安全与隐私重点实验室</a>，
+    <a href="https://www.bjtu.edu.cn/">北京交通大学</a>
+    <div class="education-detail">
+      方向：隐私计算与密码学应用<br>
+      导师：<a href="导师的个人主页.site">张大伟副教授</a>
+    </div>
+  </li>
+  <li class="education-item">
+    <span class="education-time">2024.10-2025.10</span>
+    <span class="education-degree">CSC国家公派联合培养博士生</span>，
+    <a href="https://u.muroran-it.ac.jp/enes.html">Emerging Networks and Systems Laboratory（ENeS实验室）</a>，
+    <a href="https://muroran-it.ac.jp/">室兰工业大学</a>
+    <div class="education-detail">
+      方向：物联网隐私保护<br>
+      导师：<a href="https://u.muroran-it.ac.jp/enes/~mxdong/">董冕雄教授 </a>（副校长，日本工程院外籍院士）
+	  <a href="https://u.muroran-it.ac.jp/enes/~ota/"> Kaoru Ota 教授  </a>（东北大学，日本工程院院士）
+    </div>
+  </li>
+
+</ul>
+
+
+
+
+
+
+<A NAME="Publications"><h2>代表性论文</h2></A>
+
+<style>
+.pub-list {
+  counter-reset: pub;
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.pub-list li {
+  counter-increment: pub;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  padding-left: 2.2rem;
+  position: relative;
+}
+
+.pub-list li::before {
+  content: "[" counter(pub) "] ";
+  position: absolute;
+  left: 0;
+}
+
+.pub-desc {
+  display: block;
+  margin-top: 2px;
+}
+</style>
+
+<ol class="pub-list">
+
+  <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “VOLE-PDRAA: An Efficient Privacy-Preserving Data Retrieval Protocol with Anonymous Authorization Based on Vector-OLE,”
+    <b><i>IEEE Transactions on Dependable and Secure Computing</i></b>,
+    2026.
+    (<b>CCF-A, Q1, 中科院1区</b>)
+  </li>
+  
+  
+    <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “PDRAA: A Privacy Data Retrieval Protocol with Anonymous Authorization Based on Verifiable Credential,”
+    <b><i>IEEE Transactions on Network and Service Management</i></b>,
+    2026.
+    (<b>CCF-C, Q1, 中科院2区Top</b>)
+  </li>
+  
+    <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “PRSD: Efficient Protocol for Privacy-Preserving Retrieval of Sensitive Data Based on Labeled PSI,”
+    <b><i>Computer Networks</i></b>,
+    2024.
+    (<b>CCF-B, Q1, 中科院2区</b>)
+  </li>
+
+
+  <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “HealthDID: An Efficient and Authorizable Multi-Party Privacy-Preserving EMR Sharing System Based on DID,”
+    <b><i>Computer Standards &amp; Interfaces</i></b>,
+    2024.
+    (<b>Q1, 中科院2区</b>)
+  </li>
+
+ <li>
+    X. Han, <b>Z. Wu</b>, et al.,
+    “CPPA-RORS: A Privacy-Preserving Authentication Scheme Based on Revocable Ring Signature for VANETs,”
+    <b><i>Internet of Things</i></b>,
+    2024.
+    (<b>Q1, 中科院2区</b>)
+  </li>
+
+ <li>
+    <b>Z. Wu</b>, D. Zhang, et al.,
+    “Respect Your Privacy: An Identifiable and Authorized Privacy Data Retrieval Protocol Through DID,”
+    <b><i>Information Processing &amp; Management</i></b>,
+    under review.
+    (<b>三审, CCF-B, Q1, 中科院1区</b>)
+  </li>
+
+</ol>
+
+
+
+<A NAME="Conferences"><h2>会议论文</h2></A>
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="./Files/aigei_com.gif" 
+       alt="太难了，发不出来" 
+       style="width: 180px; height: auto; border-radius: 8px;">
+  <div style="margin-top: 8px; font-size: 16px; color: #666;">
+    太难了，发不出来……
+  </div>
+</div>
+
+
+
+<A NAME="Services"><h2>学术服务</h2></A>
+
+<font size="3">
+<ul>
+  <li><b>IEEE Transactions on Information Forensics and Security (TIFS)</b>, CCF-A, 中科院1区, 密码学领域审稿人</li>
+  <li><b>IEEE Transactions on Dependable and Secure Computing (TDSC)</b>, CCF-A, 中科院2区, 隐私计算领域审稿人</li>
+  <li><b>Information Processing &amp; Management (IPM)</b>, CCF-B, 中科院1区, 区块链安全领域审稿人</li>
+  <li><b>Journal of Systems Architecture (JSA)</b>, CCF-B, 中科院3区, 密码学应用领域审稿人</li>
+  <li><b>IEEE Transactions on Network and Service Management (TNSM)</b>, CCF-C, 中科院2区, 密码学领域审稿人</li>
+  <li><b>The 11th International Conference on Big Data Computing and Communications (BigCom 2025)</b>, Security and Privacy for Big Data 分会场 Chair</li>
+</ul>
+</font>
+
+
+
+
+
+
+<!-- awards -->
+<A NAME="Awards"><h2>荣誉奖励</h2></A>
+<font size="2"> 
+<ul>
+
+</ul>
+</font>
+ <div style="text-align: center; margin: 10px 0;">
+  <img src="./Files/浮云.jpg"
+       alt="学术服务太难了"
+       style="width: 420px; max-width: 100%; height: auto; border-radius: 8px;">
+  <div style="margin-top: 8px; font-size: 16px; color: #666;">
+    这些只是虚名而已……
+  </div>
+</div>
+<br />
+<br />
+
+  
+<!--
+All Rights Reserved by Qiang Zhang. Part of page is generated by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+-->
+
+<!--
+<font size="2"; color="#A0A0A0";>
+<p style="text-align:center">Updating time: 2020.05.24</p>
+</font>
+-->
+
+</body>
+</html>
